@@ -1,6 +1,6 @@
 function traerInformacionGama(){
     $.ajax({
-        url:"http://129.151.112.197:8080/api/Gama/all",
+        url:"http://localhost:8080/api/Gama/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -15,10 +15,10 @@ function pintarRespuesta(respuesta){
     let myTable="<table>";
     for(i=0;i<respuesta.length;i++){
         myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].id+"</td>";
+        myTable+="<td>"+respuesta[i].idGama+"</td>";
         myTable+="<td>"+respuesta[i].name+"</td>";
         myTable+="<td>"+respuesta[i].description+"</td>";
-        myTable+="<td> <button onclick='borrarInfoGama("+respuesta[i].id+")'>Borrar</button>";
+        myTable+="<td> <button onclick='borrarInfoGama("+respuesta[i].idGama+")'>Borrar</button>";
         myTable+="</tr>";
     }
     myTable+="</table>";
@@ -37,17 +37,19 @@ function guardarInformacionGama(){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://129.151.112.197:8080/api/Gama/save",
-       
-        
-        success:function(response) {
-                console.log(response);
+        url:"http://localhost:8080/api/Gama/save",
+
+        success:function(response){
+           if (("#Cname")== "" || ("#Cdescription")== "")
+           alert("No se pueden ingresar campos vacios")
+        else {
+            console.log(response);
             console.log("Se Guardo Correctamente");
-            alert("Se guardo correctamente");
-            window.location.reload()
-    
-        },
+            alert("Se Guardo correctamente");
+            window.location.reload() 
+        }
         
+        },    
         error: function(jqXHR, textStatus, errorThrown) {
               window.location.reload()
             alert("No se guardo correctamente");
@@ -55,14 +57,13 @@ function guardarInformacionGama(){
     
         }
         });
-
 }
 
 
 
 function actualizarInfoGama(){
     let var2 = {
-        id:$("#Cid").val(),
+        idGama:$("#idGama").val(),
         name:$("#Cname").val(),
         description:$("#Cdescription").val()
         };
@@ -73,7 +74,7 @@ function actualizarInfoGama(){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://129.151.112.197:8080/api/Gama/update",
+        url:"http://localhost:8080/api/Gama/update",
        
         
         success:function(response) {
@@ -85,7 +86,7 @@ function actualizarInfoGama(){
         },
         
         error: function(jqXHR, textStatus, errorThrown) {
-              window.location.reload()
+              
             alert("No se actualizo correctamente");
     
     
@@ -94,9 +95,9 @@ function actualizarInfoGama(){
 
 }
 
-function borrarInfoGama(id){
+function borrarInfoGama(idGama){
     let var2 = {
-        id:id
+        id:idGama
         };
       
         $.ajax({
@@ -105,7 +106,7 @@ function borrarInfoGama(id){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://129.151.112.197:8080/api/Gama/{id}",
+        url:"http://localhost:8080/api/Gama/{id}",
        
         
         success:function(response) {
@@ -135,7 +136,7 @@ function borrarInfoGama(id){
 
 function traerInformacionCar(){
     $.ajax({
-        url:"http://129.151.112.197:8080/api/Car/all",
+        url:"http://localhost:8080/api/Car/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -150,7 +151,7 @@ function pintarRespuestaCar(respuesta){
     let myTable="<table>";
     for(i=0;i<respuesta.length;i++){
         myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].id+"</td>";
+        myTable+="<td>"+respuesta[i].idCar+"</td>";
         myTable+="<td>"+respuesta[i].name+"</td>";
         myTable+="<td>"+respuesta[i].brand+"</td>";
         myTable+="<td>"+respuesta[i].year+"</td>";
@@ -175,7 +176,7 @@ function guardarInformacionCar(){
         dataType: 'JSON',
         data: JSON.stringify(var3),
         
-        url:"http://129.151.112.197:8080/api/Car/save",
+        url:"http://localhost:8080/api/Car/save",
        
         
         success:function(response) {
@@ -198,7 +199,7 @@ function guardarInformacionCar(){
 
 function actualizarInfoCar(){
     let var3 = {
-        id:$("#Bid").val(),
+        idCar:$("#idCar").val(),
         name:$("#Bname").val(),
         brand:$("#Bbrand").val(),
         year:$("#Byear").val(),
@@ -211,7 +212,7 @@ function actualizarInfoCar(){
         dataType: 'JSON',
         data: JSON.stringify(var3),
         
-        url:"http://129.151.112.197:8080/api/Car/update",
+        url:"http://localhost:8080/api/Car/update",
        
         
         success:function(response) {
@@ -239,7 +240,7 @@ function actualizarInfoCar(){
 
 function traerInformacionClientes(){
     $.ajax({
-        url:"http://129.151.112.197:8080/api/Client/all",
+        url:"http://localhost:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -254,7 +255,7 @@ function pintarRespuestaClientes(respuesta){
     let myTable="<table>";
     for(i=0;i<respuesta.length;i++){
         myTable+="<tr>";
-        myTable+="<td>"+respuesta[i].id+"</td>";
+        myTable+="<td>"+respuesta[i].idClient+"</td>";
         myTable+="<td>"+respuesta[i].email+"</td>";
         myTable+="<td>"+respuesta[i].password+"</td>";
         myTable+="<td>"+respuesta[i].name+"</td>";
@@ -279,7 +280,7 @@ function guardarInformacionClientes(){
         dataType: 'JSON',
         data: JSON.stringify(var4),
         
-        url:"http://129.151.112.197:8080/api/Client/save",
+        url:"http://localhost:8080/api/Client/save",
        
         
         success:function(response) {
@@ -302,7 +303,7 @@ function guardarInformacionClientes(){
 
 function actualizarInfoClientes(){
     let var4 = {
-        id:$("#CLid").val(),
+        idClient:$("#idClient").val(),
         email:$("#CLemail").val(),
         password:$("#CLpassword").val(),
         name:$("#CLname").val(),
@@ -315,7 +316,7 @@ function actualizarInfoClientes(){
         dataType: 'JSON',
         data: JSON.stringify(var4),
         
-        url:"http://129.151.112.197:8080/api/Client/update",
+        url:"http://localhost:8080/api/Client/update",
        
         
         success:function(response) {
