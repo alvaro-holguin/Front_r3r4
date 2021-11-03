@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Reto 3</title>
+    <title>FrontEnd</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="js/misFunciones.js"></script>  
     <title>Reto3</title>
@@ -19,16 +19,12 @@
     <div id="resultado1"></div>
     <button onclick="traerInformacionGama()" > Consultar Gama</button>
     
-    
     <div>
-        <input type="number" id="idGama" placeholder="idGama">
         <input type="text" id="Cname" placeholder="name">
         <input type="text" id="Cdescription" placeholder="description">
-       
-        
+
     </div>
-    <button onclick="guardarInformacionGama()">Guardar Gama</button>
-    <button onclick="actualizarInfoGama()">Actualizar Gama</button>
+    <button onclick="guardarInformacionGama()">Guardar Gama</button
     
     <!--///////////////////////////////car///////////////////////////////-->
 
@@ -37,14 +33,13 @@
     <button onclick="traerInformacionCar()" > Consultar Car</button>
     
     <div>
-        <input type="number" id="idCar" placeholder="idCar">
         <input type="text" id="Bname" placeholder="name">
         <input type="text" id="Bbrand" placeholder="brand">
         <input type="number" id="Byear" placeholder="year">
-        <input type="text" id="Bdescription" placeholder="description">    
+        <input type="text" id="Bdescription" placeholder="description"> 
+        <!--<select id="select-gama"></select>-->
     </div>
     <button onclick="guardarInformacionCar()">Guardar Car</button>
-    <button onclick="actualizarInfoCar()">Actualizar Car</button>
 
     <!--///////////////////////////////Clientes///////////////////////////////-->
 
@@ -53,12 +48,50 @@
     <button onclick="traerInformacionClientes()" > Consultar Clientes</button>
     
     <div>
-        <input type="number" id="idClient" placeholder="idClient">
         <input type="text" id="CLemail" placeholder="email">
         <input type="text" id="CLpassword" placeholder="password">
         <input type="text" id="CLname" placeholder="name">
         <input type="number" id="CLage" placeholder="age">  
     </div>
     <button onclick="guardarInformacionClientes()">Guardar Clientes</button>
-    <button onclick="actualizarInfoClientes()">Actualizar Clientes</button>
 </html>
+
+<!--///////////////////////////////Mensajes///////////////////////////////-->
+
+<h2> Mensajes</h2>
+    <div id="resultado4"></div>
+    <button onclick="traerInformacionMensajes()" > Consultar Mensajes</button>
+    
+    <div>
+        <input type="text" id="MSmessageText" placeholder="mensajes">
+    </div>
+    <button onclick="guardarInformacionMensjaes()">Guardar Mensajes</button>
+
+
+<!--///////////////////////////////reservacion///////////////////////////////-->
+<h2> Reservaciones</h2>
+<div id="resultado5"></div>
+    <button onclick="traerInforReservacion()" > Consultar Reservaciones</button>
+    
+    <div>
+        <input type="date" id="RstartDate" placeholder="startDate">
+        <input type="date" id="RdevolutionDate" placeholder="devolutionDate">
+        <input type="text" id="Rstatus" placeholder="status">
+    </div>
+    <button onclick="guardarInfoReservacion()">Guardar Reservaciones</button>
+
+    <!--///////////////////////////////reservacion///////////////////////////////-->
+<h2> Reservaciones</h2>
+
+<button onclick="traerReporteStatus()"> Generar Reporte Status Reservas </button>
+<div id="resultadoStatus"></div>
+
+
+
+<input type="date" id="RstarDate" placeholder="descripcion">
+<input type="date" id="RdevolutionDate" placeholder="descripcion">
+<button onclick="traerReporteDate()"> Generar Reporte por fecha </button>
+<div id="resultadoDate"></div>
+
+<button onclick="traerReporteClientes2()"> Generar Reporte Clientes y Cantidad de reservas por cliente </button>
+<div id="resultadoClientes"></div>
