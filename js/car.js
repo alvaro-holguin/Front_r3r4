@@ -1,7 +1,7 @@
 function autoTraeGama(){
     console.log("se esta ejecutando")
     $.ajax({
-        url:"http://localhost:8080/api/Gama/all",
+        url:"http://129.151.113.146:8080/api/Gama/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -18,7 +18,7 @@ function autoTraeGama(){
 
 function traerInformacionCar(){
     $.ajax({
-        url:"http://localhost:8080/api/Car/all",
+        url:"http://129.151.113.146:8080/api/Car/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -65,7 +65,7 @@ function guardarInformacionCar(){
         dataType: 'JSON',
         data: JSON.stringify(var3),
         
-        url:"http://localhost:8080/api/Car/save",
+        url:"http://129.151.113.146:8080/api/Car/save",
        
         
         success:function(response) {
@@ -102,7 +102,7 @@ function actualizarInfoCar(ActuElemento){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Car/update",
+        url:"http://129.151.113.146:8080/api/Car/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -127,7 +127,7 @@ function borrarCar(idElemento){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Car/"+idElemento,
+        url:"http://129.151.113.146:8080/api/Car/"+idElemento,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",

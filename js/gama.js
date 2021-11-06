@@ -1,6 +1,6 @@
 function traerInformacionGama(){
     $.ajax({
-        url:"http://localhost:8080/api/Gama/all",
+        url:"http://129.151.113.146:8080/api/Gama/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -42,7 +42,7 @@ function guardarInformacionGama(){
         dataType: 'JSON',
         data: JSON.stringify(var2),
         
-        url:"http://localhost:8080/api/Gama/save",
+        url:"http://129.151.113.146:8080/api/Gama/save",
        
         
         success:function(response) {
@@ -78,7 +78,7 @@ function actualizarInfoGama(ActuElemento){
     console.log(myData);
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Gama/update",
+        url:"http://129.151.113.146:8080/api/Gama/update",
         type:"PUT",
         data:dataToSend,
         contentType:"application/JSON",
@@ -101,7 +101,7 @@ function borrarInfoGama(idElemento){
     };
     let dataToSend=JSON.stringify(myData);
     $.ajax({
-        url:"http://localhost:8080/api/Gama/"+idElemento,
+        url:"http://129.151.113.146:8080/api/Gama/"+idElemento,
         type:"DELETE",
         data:dataToSend,
         contentType:"application/JSON",

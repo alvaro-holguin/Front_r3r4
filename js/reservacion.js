@@ -1,7 +1,7 @@
 function autoTraeCliente1(){
     
     $.ajax({
-        url:"http://localhost:8080/api/Client/all",
+        url:"http://129.151.113.146:8080/api/Client/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -19,7 +19,7 @@ function autoTraeCliente1(){
 function autoTraeCar1(){
 
     $.ajax({
-        url:"http://localhost:8080/api/Car/all",
+        url:"http://129.151.113.146:8080/api/Car/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -37,7 +37,7 @@ function autoTraeCar1(){
 
 function traerInforReservacion(){
     $.ajax({
-        url:"http://localhost:8080/api/Reservation/all",
+        url:"http://129.151.113.146:8080/api/Reservation/all",
         type:"GET",
         datatype:"JSON",
         success:function(respuesta){
@@ -87,7 +87,7 @@ function guardarInfoReservacion(){
         dataType: 'JSON',
         data: JSON.stringify(var4),
         
-        url:"http://localhost:8080/api/Reservation/save",
+        url:"http://129.151.113.146:8080/api/Reservation/save",
        
         
         success:function(response) {
@@ -125,7 +125,7 @@ function guardarInfoReservacion(){
         console.log(myData);
         let dataToSend=JSON.stringify(myData);
         $.ajax({
-            url:"http://localhost:8080/api/Reservation/update",
+            url:"http://129.151.113.146:8080/api/Reservation/update",
             type:"PUT",
             data:dataToSend,
             contentType:"application/JSON",
@@ -151,7 +151,7 @@ function guardarInfoReservacion(){
         };
         let dataToSend=JSON.stringify(myData);
         $.ajax({
-            url:"http://localhost:8080/api/Reservation/"+idElemento,
+            url:"http://129.151.113.146:8080/api/Reservation/"+idElemento,
             type:"DELETE",
             data:dataToSend,
             contentType:"application/JSON",
