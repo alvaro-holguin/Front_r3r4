@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent Car</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+    <header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="gama.html">Gama</a></li>
+				<li><a href="car.html">Car</a></li>
+				<li><a href="cliente.html">Cliente</a></li>
+				<li><a href="Mensajes.html">Mensajes</a></li>
+                <li><a href="reservacion.html">Reservaciones</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+			</ul>
+		</nav>
+	</header><br><br>
+
+    <div class="espacio">
+        <link rel="stylesheet" href="css/botones.css">
+        <h2>Registro de Mensajes</h2>
+        <script type="text/javascript" src="js/mensajes.js"></script>
+        
+        <div class="tamaño">
+            <label for="mensajes">Mensajes</label><br>
+            <input type="text" id="MSmessageText" placeholder="mensajes"><br>
+            <label for="Client">Cliente</label><br>
+            <select class="relacion" id="select-client"><br>
+                <option value="">Select a Client</option>
+            </select> <br>
+            <label for="car">Car</label><br>
+            <select class="relacion" id="select-car">
+                <option value="">Select a car</option>
+            </select><br>
+            <script type="text/javascript">
+                window.onload = autoTraeCliente();
+                window.onload = autoTraeCar();
+           </script><br>  
+        </div>
+
+        <button onclick="traerInformacionMensajes()" > Consultar Mensajes</button>
+        <button onclick="guardarInformacionMensjaes()">Guardar Mensajes</button>
+        <div class="ubicacion">
+            <h2>Informe de Mensajes</h2>
+            <div id="resultado4"></div>
+        </div>  
+    </div>
+</body>
+</html>

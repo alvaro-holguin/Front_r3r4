@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/menu.css">
+    <title>Rent Car</title>
+</head>
+<body>
+
+    <header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="gama.html">Gama</a></li>
+				<li><a href="car.html">Car</a></li>
+				<li><a href="cliente.html">Cliente</a></li>
+				<li><a href="Mensajes.html">Mensajes</a></li>
+                <li><a href="reservacion.html">Reservaciones</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+			</ul>
+		</nav>
+	</header><br><br>
+
+    <div class="espacio">
+        <link rel="stylesheet" href="css/botones.css">
+        <h2> Reportes</h2><br>
+        <script type="text/javascript" src="js/reportes.js"></script>
+
+        <div class="tamaño">
+            <input type="date" id="RPstarDate" placeholder="descripcion"><br><br>
+            <input type="date" id="RPdevolutionDate" placeholder="descripcion"><br><br>
+        </div>
+        
+        <button onclick="traerReporteDate()"> Generar Reporte por fecha </button>
+        <button class="botonreporte2" onclick="traerReporteStatus()"> Generar Reporte Status Reservas </button>
+        
+        <div>
+            <button class="botonreporte" onclick="traerReporteClientes2()"> Generar Reporte Clientes y Cantidad de reservas por cliente</button>
+        </div>
+
+        <div class="ubicacion">
+            <h2> Reporte Status</h2>
+            <div id="resultadoStatus"></div>
+            <h2 class="h2clientes">Reservas por cliente</h2>
+            <div id="resultadoDate"></div>
+            <div id="resultadoClientes"></div>
+        </div>   
+    </div>
+</body>
+</html>

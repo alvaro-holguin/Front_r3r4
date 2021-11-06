@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/menu.css">
+    <title>Rent Car</title>
+</head>
+<body>
+
+    <header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="gama.html">Gama</a></li>
+				<li><a href="car.html">Car</a></li>
+				<li><a href="cliente.html">Cliente</a></li>
+				<li><a href="Mensajes.html">Mensajes</a></li>
+                <li><a href="reservacion.html">Reservaciones</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+			</ul>
+		</nav>
+	</header><br><br>
+
+
+ <div class="espacio">
+        <link rel="stylesheet" href="css/botones.css">
+        <h2> Registro de Cars</h2>
+        
+        <script type="text/javascript" src="js/car.js"></script> 
+
+        <div class="tamaño">
+            <label for="name">Name</label><br>
+            <input type="text" id="Bname" placeholder="name"><br>
+            <label for="brand">Brand</label><br>
+            <input type="text" id="Bbrand" placeholder="brand"><br>
+            <label for="year">Year</label><br>
+            <input type="number" id="Byear" placeholder="year"><br>
+            <label for="description">Descripcion</label><br>
+            <input type="text" id="Bdescription" placeholder="description"><br>
+            <label for="Gama">Gama</label><br>
+            <select class="relacion" id="select-gama"></select><br>
+            <script type="text/javascript">
+                window.onload = autoTraeGama();
+            </script><br>
+        </div>
+            <button onclick="traerInformacionCar()" > Consultar Car</button>
+            <button onclick="guardarInformacionCar()">Guardar Car</button>
+            <div class="ubicacion">
+                <h2>Informe de Cars</h2>
+                <div id="miListaCar"></div>
+            </div>   
+    </div>  
+             
+</body>
+</html>

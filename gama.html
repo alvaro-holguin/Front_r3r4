@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Rent Car</title>
+    
+</head>
+<body>
+
+    <header>
+        <link rel="stylesheet" href="css/menu.css">
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="gama.html">Gama</a></li>
+				<li><a href="car.html">Car</a></li>
+				<li><a href="cliente.html">Cliente</a></li>
+				<li><a href="Mensajes.html">Mensajes</a></li>
+                <li><a href="reservacion.html">Reservaciones</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+			</ul>
+		</nav>
+	</header><br><br>
+
+    <div class="espacio">
+        <link rel="stylesheet" href="css/botones.css">
+        <h2> Registro de Gamas</h2><br>
+        
+        <script type="text/javascript" src="js/gama.js"></script> 
+           
+        <div class="tamaño">
+            <label for="name">Name</label><br>
+            <input type="text" id="Cname" placeholder="name"><br>
+            <label for="description">Descripcion</label><br>
+            <input type="text" id="Cdescription" placeholder="description">
+        </div><br>
+        
+        <button onclick="traerInformacionGama()" > Consultar Gama</button> 
+        <button onclick="guardarInformacionGama()">Guardar Gama</button>
+        <div class="ubicacion">
+            <h2>Informe de Gama</h2>
+            <div id="resultado1"></div>
+        </div>   
+    </div>
+    
+</body>
+</html>
